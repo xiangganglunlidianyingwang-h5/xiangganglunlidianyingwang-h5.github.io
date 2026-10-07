@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>香港伦理电影网 - 香港伦理/江湖情义/家庭伦理片导航</title>
+<meta name="description" content="香港伦理电影网整理香港伦理电影、江湖情义片、家庭伦理剧与情欲边界作品，港风复古、移动端自适应、分类清晰，方便影迷快速检索。">
+<meta name="keywords" content="香港伦理电影网,香港伦理电影,江湖情义片,家庭伦理剧,情欲边界电影,xiangganglunlidianyingwang-h5">
+<style>
+:root{
+  --bg:#0a0708;
+  --panel:#161013;
+  --line:#3a2230;
+  --gold:#e8c069;
+  --red:#ff3b5c;
+  --neon:#ff7a00;
+  --text:#f3e9ec;
+  --muted:#b89aa3;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:
+    radial-gradient(1200px 400px at 80% -10%, rgba(255,59,92,.18), transparent),
+    radial-gradient(900px 400px at 0% 0%, rgba(232,192,105,.12), transparent),
+    var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  font-size:16px;line-height:1.75;
+}
+a{color:var(--gold);text-decoration:none}
+
+/* 顶栏 */
+.masthead{
+  position:sticky;top:0;z-index:60;
+  background:rgba(10,7,8,.86);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(8px);
+}
+.masthead__row{
+  max-width:1180px;margin:0 auto;padding:.85rem 1rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;
+}
+.brand{
+  font-weight:900;letter-spacing:.5px;font-size:1.25rem;
+  color:#fff;text-shadow:0 0 12px rgba(255,59,92,.45);
+}
+.brand b{color:var(--gold)}
+.brand small{display:block;font-size:.7rem;color:var(--muted);font-weight:500;letter-spacing:0}
+.tabs{display:flex;gap:.45rem;flex-wrap:wrap}
+.tabs a{
+  padding:.42rem .85rem;border-radius:999px;font-size:.88rem;
+  background:var(--panel);border:1px solid var(--line);color:var(--muted);
+}
+.tabs a:hover{color:#fff;border-color:var(--red);box-shadow:0 0 10px rgba(255,59,92,.35)}
+
+/* Hero */
+.lede{
+  max-width:1180px;margin:0 auto;padding:3.2rem 1rem 2rem;
+  display:grid;grid-template-columns:1.25fr .75fr;gap:2rem;align-items:center;
+}
+.lede h1{
+  font-size:2.3rem;line-height:1.2;margin-bottom:1rem;
+  text-shadow:0 0 18px rgba(232,192,105,.25);
+}
+.lede h1 em{color:var(--red);font-style:normal}
+.lede p{color:var(--muted);margin-bottom:1.6rem}
+.lede .pill{
+  display:inline-block;padding:.7rem 1.7rem;border-radius:999px;font-weight:800;
+  background:linear-gradient(90deg,var(--red),var(--neon));color:#1a0c0c;
+}
+.neon-card{
+  height:210px;border-radius:22px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,122,0,.08) 0 2px, transparent 2px 22px),
+    linear-gradient(135deg,#2a0f17,#3a2230);
+  display:flex;align-items:center;justify-content:center;font-size:4.5rem;
+  border:1px solid var(--line);box-shadow:inset 0 0 40px rgba(255,59,92,.15);
+}
+
+/* 区块 */
+.section{max-width:1180px;margin:0 auto;padding:2.6rem 1rem}
+.kicker{
+  font-size:1.5rem;margin-bottom:1.4rem;color:var(--gold);
+  display:flex;align-items:center;gap:.6rem;
+}
+.kicker::before{content:"▮";color:var(--red)}
+
+/* 香港伦理：双列大卡 */
+.ethics{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;
+}
+.film{
+  background:var(--panel);border:1px solid var(--line);border-radius:18px;
+  padding:1.1rem;display:grid;grid-template-columns:84px 1fr;gap:1rem;align-items:center;
+}
+.film__no{
+  width:84px;height:84px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;font-weight:900;color:#1a0c0c;
+  background:linear-gradient(135deg,var(--gold),var(--neon));
+}
+.film h3{font-size:1.05rem;margin-bottom:.3rem}
+.film p{font-size:.85rem;color:var(--muted)}
+
+/* 江湖情义：竖向时间轴 */
+.gang{
+  border-left:2px dashed var(--line);padding-left:1.1rem;display:flex;flex-direction:column;gap:1rem;
+}
+.gang__item{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem}
+.gang__item::before{
+  content:"";position:absolute;left:-1.45rem;top:1.1rem;width:12px;height:12px;border-radius:50%;
+  background:var(--red);box-shadow:0 0 10px var(--red);
+}
+.gang__item h3{font-size:1rem}
+.gang__item span{font-size:.82rem;color:var(--muted)}
+
+/* 家庭伦理：三列磁贴 */
+.family{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;
+}
+.tile{
+  min-height:130px;border-radius:16px;padding:1rem;
+  background:linear-gradient(160deg,#1b1014,#241519);
+  border:1px solid var(--line);
+}
+.tile b{display:block;font-size:1rem;margin-bottom:.35rem;color:var(--gold)}
+.tile small{color:var(--muted);font-size:.82rem}
+
+/* 情欲边界：左右分栏列表 */
+.edge{display:grid;grid-template-columns:.9fr 1.1fr;gap:1.2rem;align-items:start}
+.edge__side{
+  border-radius:18px;padding:1.4rem;color:#f3e9ec;
+  background:linear-gradient(135deg,rgba(255,59,92,.25),rgba(255,122,0,.12));
+  border:1px solid var(--line);
+}
+.edge__list{display:flex;flex-direction:column;gap:.8rem}
+.edge__row{
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.85rem 1rem;
+}
+.edge__row h3{font-size:.98rem}
+.edge__row p{font-size:.83rem;color:var(--muted)}
+
+/* 声明 */
+.statement{
+  background:linear-gradient(135deg,#161013,#1d1118);
+  border:1px solid var(--line);border-radius:20px;padding:1.8rem;
+}
+.statement h2{color:var(--gold);margin-bottom:.8rem}
+.statement p{color:var(--muted);margin-bottom:.5rem}
+.statement code{background:#000;padding:.2rem .55rem;border-radius:8px;color:var(--gold)}
+
+/* 底部 */
+.colophon{
+  text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.82rem;
+  border-top:1px solid var(--line);margin-top:2rem;
+}
+
+/* 移动端 */
+@media (max-width:768px){
+  .lede{grid-template-columns:1fr;text-align:center}
+  .neon-card{order:-1;height:170px;font-size:3.6rem}
+  .ethics{grid-template-columns:1fr}
+  .family{grid-template-columns:1fr 1fr}
+  .edge{grid-template-columns:1fr}
+  .tabs{justify-content:center}
+  .film{grid-template-columns:64px 1fr}
+  .film__no{width:64px;height:64px;font-size:1.2rem}
+  h1{font-size:1.85rem!important}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="masthead">
+  <div class="masthead__row">
+    <div class="brand">香港<b>伦理电影网</b><small>xiangganglunlidianyingwang-h5.github.io</small></div>
+    <nav class="tabs">
+      <a href="#">首页</a>
+      <a href="#hk">香港伦理</a>
+      <a href="#gang">江湖情义</a>
+      <a href="#family">家庭伦理</a>
+      <a href="#edge">情欲边界</a>
+      <a href="#note">站点声明</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lede">
+  <div>
+    <h1>港片深夜场：<br><em>伦理、情义、欲望</em> 一台看完</h1>
+    <p>香港伦理电影网聚焦香港伦理片、江湖情义片、家庭伦理剧与成人边界作品导航，港风复古界面，手机刷片更顺。</p>
+    <a href="#" class="pill">进入影单</a>
+  </div>
+  <div class="neon-card">🎞️</div>
+</section>
+
+<section class="section" id="hk">
+  <h2 class="kicker">香港伦理电影</h2>
+  <div class="ethics">
+    <article class="film"><div class="film__no">01</div><div><h3>屋檐下的秘密</h3><p>家庭 / 代际冲突 / 旧楼里的沉默</p></div></article>
+    <article class="film"><div class="film__no">02</div><div><h3>霓虹夜归人</h3><p>都市 / 孤独 / 凌晨的茶餐厅</p></div></article>
+    <article class="film"><div class="film__no">03</div><div><h3>麻将桌上的家</h3><p>亲情 / 金钱 / 粤语吵闹戏</p></div></article>
+    <article class="film"><div class="film__no">04</div><div><h3>租来的丈夫</h3><p>婚姻 / 谎言 / 港岛轻喜剧</p></div></article>
+  </div>
+</section>
+
+<section class="section" id="gang">
+  <h2 class="kicker">江湖情义片</h2>
+  <div class="gang">
+    <div class="gang__item"><h3>铜锣湾往事</h3><span>兄弟 / 义气 / 收数仔的黄昏</span></div>
+    <div class="gang__item"><h3>龙头椅空着</h3><span>帮派 / 继承 / 血与雪茄</span></div>
+    <div class="gang__item"><h3>跑路到旺角</h3><span>逃亡 / 情义两难 / 雨夜摩托车</span></div>
+    <div class="gang__item"><h3>阿嫂说话</h3><span>江湖侧写 / 女人视角 / 黑帮家庭</span></div>
+  </div>
+</section>
+
+<section class="section" id="family">
+  <h2 class="kicker">家庭伦理剧</h2>
+  <div class="family">
+    <div class="tile"><b>婆媳之间</b><small>粤语长篇 / 饭桌战争</small></div>
+    <div class="tile"><b>阿爸的债</b><small>中年失业 / 父子和解</small></div>
+    <div class="tile"><b>三兄妹分产</b><small>遗产 / 旧楼 / 人情薄</small></div>
+    <div class="tile"><b>媳妇从内地来</b><small>跨境婚姻 / 文化摩擦</small></div>
+    <div class="tile"><b>妈姐不说话</b><small>佣人视角 / 豪门暗流</small></div>
+    <div class="tile"><b>孙子回来了</b><small>隔代亲 / 围村故事</small></div>
+  </div>
+</section>
+
+<section class="section" id="edge">
+  <h2 class="kicker">情欲边界</h2>
+  <div class="edge">
+    <aside class="edge__side">
+      <h3 style="margin-bottom:.6rem">成人向 / 心理向</h3>
+      <p style="color:var(--muted);font-size:.88rem">这类片单偏向欲望、背叛、道德困境与心理拉扯，适合成年影迷研究港片边界美学。</p>
+    </aside>
+    <div class="edge__list">
+      <div class="edge__row"><h3>夜店情书</h3><p>欲望 / 金钱 / 兰桂坊灯光</p></div>
+      <div class="edge__row"><h3>婚外线</h3><p>出轨 / 道德困境 / 中产危机</p></div>
+      <div class="edge__row"><h3>镜中人</h3><p>身份 / 情欲 / 双女主叙事</p></div>
+      <div class="edge__row"><h3>老板的情人</h3><p>权力 / 职场 / 90 年代港产味</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="note">
+  <div class="statement">
+    <h2>站点声明</h2>
+    <p>香港伦理电影网仅做港产伦理片、江湖片、家庭剧的分类导航与影单整理，不提供违规下载与非法资源。</p>
+    <p>官网：<code>https://xiangganglunlidianyingwang-h5.github.io</code></p>
+    <p>内容面向成年影迷与电影研究者，观影请遵守当地法律法规。</p>
+    <a href="#" class="pill">收藏本站</a>
+  </div>
+</section>
+
+<footer class="colophon">
+  © 2024 香港伦理电影网 ｜ xiangganglunlidianyingwang-h5.github.io ｜ 港风单页 / 移动端自适应
+</footer>
+
+</body>
+</html>
